@@ -1,0 +1,314 @@
+/* =============================================
+ *
+ *   JAST NAV CSS
+ *	 @orazio_nelson
+ *   Free to use under the MIT License.
+ *
+ * =============================================*/
+
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+/* ------------------------------------------
+  Generic NAV STYLES
+  *  define rules valid for all the NAV element
+  *  ex. a link in a nav doesn't have any decoration
+--------------------------------------------- */
+nav,
+nav *
+ {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+nav, nav ul {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+nav li {
+  float: left;
+  width: 100%;
+}
+
+nav li a {
+display:block;
+}
+
+nav li a,
+nav li a:hover,
+nav li a:focus
+{
+	text-decoration:none;
+	outline: 0;
+}
+
+/* ==============
+    MOBILE Menu
+   ============== */
+
+#jast-mobile-menu ul{}
+
+#mobile-menu-icon{}
+
+#mobile-menu-icon a{}
+
+@media screen and (max-width: 40em) {
+	.mobilenav_menu {
+		display:none;
+	}
+	
+	.mobilenav_btn{
+	/*position:absolute;*/
+	z-index:5;
+	top:1%;
+	right:1%;	
+	}
+	
+	.mobilenav_menutxt{
+		display:none;
+	}
+	
+	/*
+    Mobile Menu Core Style
+	*/
+	
+	.mobilenav_nav .mobilenav_arrow { font-size: 0.8em; margin: 0 0 0 0.4em;}
+	.mobilenav_nav .mobilenav_item { cursor: pointer; }
+	.mobilenav_nav .mobilenav_row { display: block }
+	.mobilenav_nav a { display: block }
+	
+	
+	.mobilenav_nav .mobilenav_item a,
+	.mobilenav_nav .mobilenav_parent-link a { display: inline }
+	
+	/* IE6/7 support */
+	.mobilenav_menu { *zoom: 1 }
+	
+	
+	.mobilenav_nav, .mobilenav_nav ul {    
+	    overflow:hidden;
+	}
+	
+	.mobilenav_nav a{	
+	    text-decoration:none;
+	    color:#fff;
+	}
+	
+	.mobilenav_nav .mobilenav_txtnode {
+	     margin-left:25px;   
+	}
+	
+
+	.js #jast-main-menu {
+		display:none;
+	}
+	
+	.js .mobilenav_menu {
+		display:block;
+		background: rgb(202, 60, 60);
+	}
+}
+
+
+/* ------------------------------------------
+  NAV TOGGLE STYLES
+---------------------------------------------*/
+
+
+/*Horizontal Navigator*/
+.h-nav{
+	background: inherit;
+	
+}
+
+
+.h-nav ul {
+	border-top: 1px solid white;
+	text-align: center;
+	vertical-align:baseline;
+	background:inherit;
+}
+
+
+.h-nav li{
+	background:inherit;
+}
+
+.h-nav li a {
+
+  width:100%;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0;
+  color: #fff;
+  -webkit-transition: color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
+}
+
+
+.h-nav li a:hover,
+.h-nav li a:focus {
+	color: rgb(66, 184, 221);
+	text-decoration:none;
+}
+
+.h-nav li.active{
+border-bottom: 2px solid #fff; /*rgb(66, 184, 221)*/
+}
+
+.h-nav ul ul{
+	background:inherit;
+	}
+
+
+/*vertical navigator*/
+.v-nav li a { 
+  border-radius: none;
+  padding:10px;
+}
+
+.v-nav li + li {
+  padding:0;
+}
+
+.v-nav li li a.menu-item {
+  padding-left: 25px;
+}
+
+.v-nav li.active a,
+.v-nav li a:hover,
+.v-nav li a:focus {
+  color: #ffffff;
+  background-color: rgb(0, 120, 231);
+}
+
+.v-nav li li {
+  margin-top: 2px;
+  /*padding-left: 15px;*/
+  font-size:90%;
+}
+
+.v-nav, .v-nav ul{
+  display:none;
+}
+
+/* Vertical Menus - show the dropdown arrow */
+.v-nav li.has-child > .menu-item:after {
+    padding-left: 0;
+    content: " \25BE";
+    font-size: small;
+}
+
+/*NON MOBILE*/
+/* VERTICAL MENU */
+
+@media screen and (min-width: 40em) {
+	.v-nav, .v-nav ul{
+		background:#ffffff;
+		display:block;
+		border-radius: 4px;
+	} 
+}
+
+/*NON MOBILE*/
+/* HORIZONTAL MENU */
+@media screen and (min-width: 40em) {
+.mobilenav_btn {
+		display:none;
+	}
+
+.mobilenav_menu {
+		display:none;
+	}
+
+.h-nav {
+	width: 100%;
+    white-space: nowrap;
+  }
+  
+  .h-nav ul:first-child{
+	border: none;
+	margin-top: 28px;
+	float:right;
+  }
+  
+  .h-nav li{	
+	width:auto;	
+	display: inline-block;
+	position: relative;
+	*display: inline;
+	zoom: 1;
+	vertical-align: middle;
+	}
+	
+	.h-nav li a {
+	display:inline-block;
+	padding: 7px 15px;
+	width:100%;
+	font-size: 14px;
+	}
+	
+	
+	/* Submenus should still be display: block; */
+	.h-nav li li {
+	    display: block;
+	    width:100%;
+	    border-bottom: none;
+	}
+	
+	.h-nav li li:last-child {
+	    border-radius:0 0 6px 6px;
+	    
+	}
+
+
+	.h-nav ul ul {
+	    display: none;
+	    height: 0;
+	    position: absolute;
+	    margin: 0;
+	    padding: 0;
+	    z-index: 3;
+	    left: 0;
+	    top: auto;
+	    width: inherit;
+	    width:100%;	    
+	        
+		-webkit-box-shadow: 0 5px 10px #aaa;
+		-moz-box-shadow: 0 5px 10px #aaa;
+		box-shadow: 0 5px 10px #aaa;
+
+	}
+	
+	.h-nav ul ul ul{
+	left:101%;
+	top:0;
+	}
+	
+	
+	.h-nav ul li.has-child:hover > ul{
+		display: block;
+	    position: absolute;
+	}
+	
+	/* Horizontal Menus - show the dropdown arrow */
+	.h-nav ul li.has-child > .menu-item:after {
+	    content: " \25BE";
+	}
+	
+	/* Horizontal Menus - show the dropdown arrow */
+	.h-nav ul ul li.has-child > .menu-item:after {
+	    content: " \25B8";
+	}
+	
+}

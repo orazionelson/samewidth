@@ -1,0 +1,188 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang=""> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Samewidth jquery plug-in</title>
+		<meta name="description" content="A jQuery function to set the same width for a group of elements">
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="shortcut icon" href="favicon.png">
+		<!--pure.css embeds normalize-->
+		<link rel="stylesheet" href="css/pure.css">
+		<link rel="stylesheet" href="css/pure.styles.css">
+		<!-- Navigator -->
+		<link rel="stylesheet" href="css/nav.css">
+		<!--icons-->
+		<link rel="stylesheet" href="css/font-awesome.min.css">	
+		<!--main jast css-->
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+		<style>
+			button {
+			background: rgb(28, 184, 65);
+			color: white;
+			border-radius: 4px;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+			font: inherit;
+			}
+			
+			button:hover {
+				text-decoration:none;
+			    color: black;
+			}
+			
+			div.organize * {
+				display: block;
+				margin:5px 0;
+				width:100%;
+			}
+				
+			@media screen and (min-width: 40em) {					 
+				div.organize *{
+				display: inline-block;
+				width:auto;		 		
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<!-- HEADER	-->        
+		<header id="page-header">
+			<div class="page-title"><a href="index.html" class="page-title">jQuery SameWidth</a></div>				   
+		</header>
+	
+		<!-- / HEADER -->
+		<!-- page .container-->
+		<main class="container clearfix" role="main">
+			<aside>
+				<nav id="jast-main-menu" class="v-nav dynamic scrollable fixed pull-right">
+				</nav>
+			</aside>
+			<article>
+				<header>
+					<h1 class="lead-item" id="samewidth-intro">SameWidth</h1>
+					<p>A jQuery function to resize all the elements in a container to the same width calculated on the larger. Mobile ready!</p>
+					<a class="pure-button button-success" href="https://github.com/orazionelson/samewidth/archive/master.zip">Download</a>
+				</header>
+				<section>
+					<h2 class="toc-item" id="js">The Javascript</h2>
+					<pre>
+						$.fn.getSameWidth = function (){
+							var w=[];
+							var selector = this;
+							$(selector).children().each(function(){
+								var val = $(this).outerWidth(); 
+								w.push(val);
+							});
+							var maxw = Math.max.apply(Math, w);
+							if($(selector).children().css('display')=='inline-block'){
+								$(selector).children().css('width', maxw);
+							}
+							
+							$(window).resize(function () {
+								$(selector).children().removeAttr( "style" );
+								$(selector).getSameWidth();
+							});
+						};					
+					</pre>
+				</section>
+				<section>
+					<h2 class="toc-item" id="css">The CSS</h2>
+					
+					<pre>
+						button {
+						background: rgb(28, 184, 65);
+						color: white;
+						border-radius: 4px;
+						text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+						font: inherit;
+						}
+						
+						button:hover {
+							text-decoration:none;
+						    color: black;
+						}
+						
+						div.organize * {
+							display: block;
+							margin:5px 0;
+							width:100%;
+						}
+							
+						@media screen and (min-width: 40em) {	
+							 
+							div.organize *{
+							display: inline-block;
+							width:auto;		 		
+							}
+						}					
+					</pre>
+				</section>
+				<section>
+					<h2 class="toc-item" id="jquery">Call the plug-in</h2>
+					<p>Call the function after jQuery and before the end of <strong>body</strong>.</p>
+					<pre>
+						<script src="js/samewidth.jquery.js"></script>
+						<script>$(document).ready(function(){
+							$('.same-width').getSameWidth();
+						});
+						</script>
+					</pre>
+				</section>
+				<section>
+					<h2 class="toc-item" id="html">The HTML</h2>
+					<p>Resize the page or view with a smartphone.</p>
+					<section>
+						<div class="jast-code-box">
+							<div class="organize normal">
+								<button>Get Started</button>
+								<button>Download</button>
+								<button>See</button>							
+							</div>
+						</div>
+						
+						<p>Add the <strong>.same-width</strong> class:</p>						
+						<div class="jast-code-box">
+							<div class="organize same-width">
+								<button>Get Started</button>
+								<button>Download</button>
+								<button>See</button>
+							</div>
+						</div>
+					</section>
+				</section>
+			</article>
+		</main>						
+		<footer class="text-center">
+			<div id="html5-logo">
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-performance-semantics.png" width="197" height="64" alt="HTML5 Powered with CSS3 / Styling, Performance &amp; Integration, and Semantics" title="HTML5 Powered with CSS3 / Styling, Performance &amp; Integration, and Semantics">
+				</a>
+			</div>
+			<section id="copy-info">
+				<h6>Made with <a href="http://orazionelson.github.io/jast/">JAST</a> 2015 by <a href="mailto:alfredo.cosco@gmail.com">Alfredo Cosco</a> | <a href="http://opensource.org/licenses/MIT">MIT Licence</a></h6>
+			</section>
+		</footer>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+		<script src="js/vendor/jquery.slicknav.js"></script>
+		<script src="js/vendor/dialog-polyfill.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+		<!--HTML HELPER: Code ready for you $(document).ready jQuery code ;)
+		Just remove the comments.-->
+		<!--script>$(document).ready(function(){});</script-->	
+		<script src="js/samewidth.jquery.js"></script>
+		<script>$(document).ready(function(){
+			$('.same-width').getSameWidth();
+			});
+		</script>			
+	</body>
+</html>

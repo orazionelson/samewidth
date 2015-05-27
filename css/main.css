@@ -1,0 +1,857 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+/* Some Bootstrap imported styles*/
+html {
+	background: rgb(250, 250, 250);
+    color: #222;
+}
+
+/**************************
+ * q/a: Line-height question
+ * source: http://stackoverflow.com/questions/19982651/why-does-bootstrap-set-the-line-height-property-to-1-428571429
+ * **************************/
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+
+/* JAST SEMANTIC Def*/
+/*Note: stile for navigator menu are in nav.css*/
+header {}
+
+main {
+	border-top:1px solid #000000;	
+	text-align: justify;
+    margin:0;
+	width: 95%;
+}
+
+
+
+article{
+  /*min-height: 800px;*/
+  text-align:left;
+}
+
+article h2.toc-item{
+border-bottom: 2px solid rgb(202, 60, 60);
+padding-bottom: 5px;
+}
+
+.jast-gallery article {
+  border: none;
+  padding: 0;
+  margin:0;
+}
+
+aside{
+margin-bottom:20px;
+}
+
+figure{
+	text-align:center;
+}
+
+.jast-gallery figure img{
+	margin: 0 auto;
+}
+
+figcaption{
+	font-style:italic;
+	font-size:90%;
+	margin-bottom:20px;
+}
+
+dialog {  
+    /*width: 40%;*/ 
+} 
+
+/*JAST BASE CLASSES & STYLES*/
+#page-header{
+background: rgb(202, 60, 60);
+height:65px;
+width:100%;
+}
+
+/* Vertical alignment for images
+ * http://stackoverflow.com/questions/18516317/vertically-align-an-image-inside-a-div-with-responsive-height
+ * */
+.logo,
+.img-container{
+	float:left;
+	margin-left:30px;
+	height:100%;
+	text-align:center; /* Align center inline elements */
+	font: 0/0 a;       /* Hide the characters like spaces */
+}
+
+.logo:before,
+.img-container:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.logo img,
+.img-container img{
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* / v align img*/
+
+/*Vertical align everything*/
+.va-container{
+	height:100%;
+	text-align:center; /* Align center inline elements */
+}
+
+
+.va-container:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+
+.va-container *{
+  vertical-align: middle;
+  display: inline-block;
+}
+/* / va-container*/
+
+
+.page-title {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 55px;
+  font-size:32px;
+  padding: 3px 20px 0 20px;
+  color: #fff;
+  float: left;
+}
+
+h1.page-title {
+margin:0;
+padding:0;
+}
+
+.page-title a,
+.page-title a:active,
+.page-title a:hover,
+.page-title a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/* .container aside {
+    border-top: 2px solid #CCC;
+}
+
+aside .title {
+    color: #000;
+    padding: 10px 10px;
+    border-bottom:1px solid #DDD;
+    background: #EEE;
+   margin: 0 auto;
+    
+    font-weight:bold;
+}*/
+
+
+/* ==============
+    MOBILE: Main
+   ============== */
+/*
+
+.container {
+    margin:0;
+}
+
+main article h1 {
+    font-size: 2em;
+    font-weight:bolder;
+}
+
+main article h2 {
+    font-size: 1.7em;
+}
+
+main article h3 {
+    font-size: 1.4em;
+    font-style: italic;
+}*/
+
+/*.container aside
+ {
+    color: #111;
+    padding: 5px 4% 10px;
+}
+*//*
+.container nav {
+margin: 0;
+padding: 0 0 20px 0;
+}*/
+
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+.affix {
+  position:fixed;
+}
+
+header.affix{
+	
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.red-text{
+font-weight:bolder;
+color:#FF0000;
+}
+
+
+.show {
+  display: block !important;
+}
+
+/** 
+ * Slideshow style rules.
+ */
+.slideshow {
+	margin:0 auto;
+	background:transparent;
+}
+
+.slidesContainer {
+   margin:0 auto;
+}
+
+.slide{
+	padding-top:7px;
+	margin: 0 auto;
+}
+
+/** 
+ * Slideshow controls style rules.
+ */
+.control {
+  display:block;
+  height:100%;
+  text-indent:-10000px;
+  position:absolute;
+  cursor: pointer;
+
+}
+#leftControl {
+ text-align:left;
+  top:0;
+  left:0;
+  width: 7%;
+  background:#000000 url(../img/prev.png) no-repeat 0 50%;
+  background-size:contain;
+  background-position:center;
+}
+#rightControl {
+  top:0;
+  right:0;
+  width: 7%;
+  background:#000000 url(../img/next.png) no-repeat 0 50%;
+  background-size:contain;
+  background-position:center;
+}
+
+/*Modal Dialog
+button {
+  display: block;
+  border-radius: 3px;
+  width:100%;
+  border: none;
+  font-size: 0.9rem;
+  margin: 10px;
+  padding: 0.4em 0.8em;
+  background: #69c773;
+  border-bottom: 1px solid #498b50;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  margin: 0 0.25rem;
+  text-align: center;
+}
+
+button:hover, button:focus {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 1;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}*/
+
+dialog {
+  background: #FFF;
+  width: 300px;
+  text-align: center;
+  padding: 1.5em;
+  margin: 1em auto;
+  border: 0;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+dialog.modal + .backdrop,
+dialog.modal::backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dialog-header{
+height:50px;
+border:1px solid red;
+}
+
+
+
+.separator{
+width:100%;
+clear:both;
+height:12px;
+}
+/*End JAST*/
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== 
+
+    nav.h-nav ul li {
+        display: inline;
+    }*/
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+    
+/*thumbs*/
+.thumbs figure {
+	float: left;
+	width: 40%;
+	font-size:80%;
+	margin: 0 5% 5% 0;
+}
+
+    
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    #page-header,
+    .container aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+    }
+
+
+/* ============
+    WIDE: Main
+   ============ */
+
+   /* .container main {
+    }
+
+    .container aside {
+        float: right;
+        width: 30%;
+    }
+    
+    .container nav {
+		float:left;
+        width: 30%;
+    }*/
+    
+/*JAST Added*/
+.left-side{
+float:left;
+}
+
+.right-side{
+float:right;
+}
+/*End JAST*/
+
+
+
+/*thumbs*/
+.thumbs figure {
+	float: left;
+	width: 25%;
+	font-size:80%;
+	margin: 0 5% 5% 0;
+}
+
+}
+
+
+
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== 
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins 
+        margin: 0 auto;
+    }*/
+    
+    /*thumbs*/
+/*thumbs*/
+.thumbs figure {
+	float: left;
+	width: 20%;
+	font-size:80%;
+	margin: 0 5% 5% 0;
+}
+    
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/*Text helpers by bootstrap*/
+small,
+.small {
+  font-size: 85%;
+}
+mark,
+.mark {
+  padding: .2em;
+  background-color: #fcf8e3;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/*Image helpers by bootstrap*/
+figure {
+  margin: 0;
+}
+img {
+  vertical-align: middle;
+}
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+.img-circle {
+  border-radius: 50%;
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eee;
+}
+
+/*Code tags rendering by Bootstrap*/
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  background:#ccc;
+  border-radius: 6px;
+  padding-left:10px;
+  font-family: monospace, monospace;
+  font-size: 0.9em;
+}
+
+
+/**************************************************************
+ * JAST TABS
+ * by: Alfredo Cosco 
+ * date: March 2015
+ * source: http://www.jacklmoore.com/notes/jquery-tabs/
+ * source: http://www.sitepoint.com/css3-tabs-using-target-selector/
+ **************************************************************/
+@media only screen and (min-width: 768px) {	
+	main > article{
+	padding: 0 4%; 
+	width:65%;
+	float:left;
+	}
+	
+	main > aside{
+	width:20%;
+	float:right;
+	}
+
+
+	.jast-tabs-style header{
+		padding-bottom:20px;
+	}
+	 
+	.tab-stripes li {
+		display:inline;
+		width: auto;	
+		height: 1.8em;
+		padding: 15px 15px;
+		border-radius: 5px 5px 0 0;
+		text-align: center;	
+		
+		/*Set style here*/
+		border-top:1px solid #bbb;
+		border-right:2px solid #bbb;
+		background-color: #DEDEDE;	
+		font-size: 1em;
+		font-weight: bold;
+		margin: 0;
+		color: #6E6E6E;				
+	}
+	
+	.tab-stripes li a {
+		line-height: 1.5em;
+		
+		/*Set style here*/
+		text-decoration: none;
+		color: inherit;		
+	}
+	
+	.tab-stripes li.active, 
+	.tabs-sections {
+		/*Set style here*/
+		background:#F0F0F0;	
+	}
+	
+	.tab-stripes li.active {		
+		color:#000;		
+	}
+	
+	 .tabs-sections{
+		padding:20px;
+		min-height:300px;
+		overflow:auto;
+	}
+
+}
+/*End of TABS*/
+/**************************************************************
+ * JAST Content/Picture Slider
+ * by: Alfredo Cosco 
+ * date: MAy 2015
+ **************************************************************/
+.jast-content-slider, .jast-gallery.slides {
+	overflow:hidden;
+}
+
+.jast-content-slider section, .slideshow figure{
+	float:left;
+}
+
+.slides-sections{
+}
+
+.content-slider-pagination{
+	text-align:center;
+}
+
+/*Jast Dialogs*/
+dialog {
+  position: absolute;
+  left: 0; right: 0;
+  margin: auto;
+  border: solid;
+  padding: 1em;
+  background: white;
+  color: black;
+
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+
+  display: none;
+}
+
+dialog[open] {
+  display: block;
+}
+
+.backdrop {
+  position: fixed;
+  background-color:rgba(0,0,0,0.1);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    /* Sovrascritta da img-responsive mutuata da bootstrap*/
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+@charset "UTF-8";
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+/*GARBAGE*/
+.wrapper {
+    /*width: 90%;
+    margin: 0 5%;*/
+}
