@@ -23,6 +23,10 @@
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 		<style>
+			pre {
+				padding-top:20px;
+				}
+			
 			button {
 			background: rgb(28, 184, 65);
 			color: white;
@@ -69,12 +73,60 @@
 			<article>
 				<header>
 					<h1 class="lead-item" id="samewidth-intro">SameWidth</h1>
-					<p>A jQuery function to resize all the elements in a container to the same width calculated on the widest of them. Mobile ready!</p>
+					<h2>A jQuery function to resize all the elements in a container to the same width calculated from the widest.</h2> 
+					<blockquote>
+						var maxw = Math.max.apply(Math, w);
+					</blockquote> 
 					<a class="pure-button button-success" href="https://github.com/orazionelson/samewidth/archive/master.zip">Download</a>
 				</header>
 				<section>
+					<h2 class="toc-item" id="html">The HTML</h2>					
+					<section>
+						<h3>These are common buttons</h3>
+						<div class="jast-code-box">
+							<div class="organize normal">
+								<button>Get Started</button>
+								<button>Download</button>
+								<button>See</button>							
+							</div>
+						</div>
+					</section>
+				</section>
+				<section>
+					<h2 class="toc-item" id="css">The CSS</h2>					
+					<pre>
+						button {
+							background: rgb(28, 184, 65);
+							color: white;
+							border-radius: 4px;
+							text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+							font: inherit;
+						}
+						
+						button:hover {
+						    text-decoration:none;
+						    color: black;
+						}
+						
+						div.organize * {
+							display: block;
+							margin:5px 0;
+							width:100%;
+						}
+							
+						@media screen and (min-width: 40em) {	
+							 
+							div.organize *{
+								display: inline-block;
+								width:auto;		 		
+							}
+						}					
+					</pre>
+				</section>
+				<section>
 					<h2 class="toc-item" id="js">The Javascript</h2>
 					<pre>
+					(function ( $ ) {
 						$.fn.getSameWidth = function (){
 							var w=[];
 							var selector = this;
@@ -91,41 +143,13 @@
 								$(selector).children().removeAttr( "style" );
 								$(selector).getSameWidth();
 							});
-						};					
-					</pre>
-				</section>
-				<section>
-					<h2 class="toc-item" id="css">The CSS</h2>
+						};
 					
-					<pre>
-						button {
-						background: rgb(28, 184, 65);
-						color: white;
-						border-radius: 4px;
-						text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-						font: inherit;
-						}
-						
-						button:hover {
-							text-decoration:none;
-						    color: black;
-						}
-						
-						div.organize * {
-							display: block;
-							margin:5px 0;
-							width:100%;
-						}
-							
-						@media screen and (min-width: 40em) {	
-							 
-							div.organize *{
-							display: inline-block;
-							width:auto;		 		
-							}
-						}					
+					}( jQuery ));
+									
 					</pre>
 				</section>
+				
 				<section>
 					<h2 class="toc-item" id="jquery">Call the plug-in</h2>
 					<p>Call the function after jQuery and before the end of <strong>body</strong>.</p>
@@ -138,18 +162,10 @@
 					</pre>
 				</section>
 				<section>
-					<h2 class="toc-item" id="html">The HTML</h2>
-					<p>Resize the page or view with a smartphone.</p>
+					<h2 class="toc-item" id="html">Back to HTML</h2>
+					<h3>TIP: Resize the page or view with a smartphone. Mobile ready!</h3>
 					<section>
-						<div class="jast-code-box">
-							<div class="organize normal">
-								<button>Get Started</button>
-								<button>Download</button>
-								<button>See</button>							
-							</div>
-						</div>
-						
-						<p>Add the <strong>.same-width</strong> class:</p>						
+						<h3>Add the <strong>.same-width</strong> class:</h3>						
 						<div class="jast-code-box">
 							<div class="organize same-width">
 								<button>Get Started</button>
@@ -159,6 +175,7 @@
 						</div>
 					</section>
 				</section>
+				
 			</article>
 		</main>						
 		<footer class="text-center">

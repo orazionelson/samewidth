@@ -443,9 +443,9 @@
 		$(this).after('<div class="show-me-the-code clearfix"></div>')
 		.each(function(i, tab) {
 			
-			var snippet = $(original[i]).html()
-						.replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
-						.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>')
+			var snippet = $(original[i]).html();
+//						.replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
+//						.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>')
 						;
 			
 			tab.id = "code-box-" + (i+1); //i starts at 0	
