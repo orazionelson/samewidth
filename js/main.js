@@ -3,27 +3,25 @@
 	/**
 	 * Set same width in a group of elements
 	 * by Alfredo Cosco 2015
-	 * */
-	/*$.fn.getSameWidth = function (){
+	 *
+	$.fn.getSameWidth = function (){
 		var w=[];
 		var selector = this;
-		$(this).children().each(function(){
+		$(selector).children().each(function(){
 			var val = $(this).outerWidth(); 
 			w.push(val);
 		});
 		var maxw = Math.max.apply(Math, w);
-		if($(this).children().css('display')=='inline-block'){
-			$(this).children().css('width', maxw);
+		if($(selector).children().css('display')=='inline-block'){
+			$(selector).children().css('width', maxw);
 		}
-		else {
-			$(this).children().css('width', '100%');
-			}
-		console.log(this.offset());
-		$(this).resize(function () {
-			$().getSameWidth();
+		
+		$(window).resize(function () {
+			$(selector).children().removeAttr( "style" );
+			$(selector).getSameWidth();
 		});
-	};*/
-	
+	};
+	 */
 	/**
 	 * Organize an article as Tabs
 	 * by Alfredo Cosco
@@ -306,7 +304,7 @@
 			});
 			
 		$(window).resize(function () {
-			//console.log(selector);
+			console.log(selector);
 			$(selector).removeAttr( "style" );
 			$.jastTopFixedVnav(selector);
 		});
@@ -319,6 +317,7 @@
 
 
 	/**
+	 * Sroll to element
 	 * Source: http://www.dconnell.co.uk/blog/index.php/2012/03/12/scroll-to-any-element-using-jquery/
 	 * */
 	$.scrollToElement = function(selector, time, verticalOffset) {	 
@@ -377,29 +376,7 @@
 		});
 		};
 	};
-	
-	/*******************************************
-	 * Dynamically charge script
-	 * in function of selectors/ids/classes.
-	 * A very basically use of: 
-	 * http://api.jquery.com/jquery.getscript/
-	 * by Alfredo Cosco 2015
-	 * ***************************************
-	$.cachedScript = function( url, options ) {
-	 
-	  // Allow user to set any option except for dataType, cache, and url
-	  options = $.extend( options || {}, {
-	    dataType: "script",
-	    cache: true,
-	    url: url
-	  });
-	 
-	  // Use $.ajax() since it is more flexible than $.getScript
-	  // Return the jqXHR object so we can chain callbacks
-	  return jQuery.ajax( options );
-	};*/
-	
-	
+		
 	/**
 	 * Put style only on the first letter of each word in a phrase
 	 * by Alfredo Cosco 2015
@@ -444,9 +421,6 @@
 		.each(function(i, tab) {
 			
 			var snippet = $(original[i]).html();
-//						.replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
-//						.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>')
-						;
 			
 			tab.id = "code-box-" + (i+1); //i starts at 0	
 			
@@ -460,102 +434,6 @@
 	};		
 
 }( jQuery ));
-
-/**
- * Functions for the JAST Slider gallery
- * by Alfredo Cosco
- * 2015
- * *
-function jastSlider(obj){
-	//Make default
-	//Remove .controls and .slideInner
-	// dynamic pieces to rewrite on resizing
-	$('#leftControl').remove();
-	$('#rightControl').remove();
-	slideInner = $('.slideInner');
-    slideInner.replaceWith(slideInner.html());
-    
-    //Set preliminary vars 
-	var currentPosition = 0;
-	
-	//calculate main container width	
-	var mainw = $(obj).width();
-	
-	//calculate left/right at 10% of main container
-	var controlWidth = (mainw/10);
-	
-	// calculate slides container at 80% of main container
-	var containerWidth = (controlWidth*8);
-	
-	// calculate img width 65% of container	
-	var imgWidth = (controlWidth*6.5);
-		
-	//Serialize slides
-	var slides = $('.slide');	
-	// & count them		
-	var numberOfSlides = slides.length;
-
-	// Remove scrollbar in JS
-	// re-set container width
-	$('.slidesContainer').css({
-		'overflow': 'hidden',
-		'width': containerWidth
-		});
-		
-	// Wrap all .slides with #slideInner div
-	slides
-	.wrapAll('<div class="slideInner"></div>')
-	// Float left to display horizontally, readjust .slides width
-	.css({
-	  'float' : 'left',
-	  'width' : containerWidth,
-	  'margin': '0 auto'
-	});
-	
-	// re-set single image width
-	$('.slide img').css('width',imgWidth);
-
-	// re-set .slideshow height, calculate it on the height of first pic
-	$('.slideshow').css('height', $('.slideInner img:first').height()+50);
-
-	// Set #slideInner width equal to total width of all slides
-	$('.slideInner').css('width', containerWidth * numberOfSlides);
-	
-	// Insert controls in the DOM
-	$('.slideshow')
-	.prepend('<span class="control" id="leftControl">Clicking moves left</span>')
-	.append('<span class="control" id="rightControl">Clicking moves right</span>');
-
-	// Hide left arrow control on first load
-	  manageControls(currentPosition,numberOfSlides);
-
-		// Create event listeners for .controls clicks
-	  $('.control')
-	    .on('click', function(){
-	    // Determine new position
-		currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
-	    
-		// Hide / show controls
-	    manageControls(currentPosition,numberOfSlides);
-	    // Move slideInner using margin-left
-	    $('.slideInner').animate({
-	      'marginLeft' : containerWidth*(-currentPosition)
-		});
-	});
-};
-
-// Slides gallery manageControls: Hides and Shows controls depending on currentPosition
-function manageControls(position,numberOfSlides){
-	// Hide left arrow if position is first slide
-	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
-	// Hide right arrow if position is last slide
-	if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
-};
-/** / slider **/
-
-
-
-
 
 
 /**
@@ -675,9 +553,6 @@ $(document).ready(function(){
     // Set role=article on nodes.
     $("article").attr("role","article");
 
-    
-	
-
 	
 	//Navigator Handler
 		// 1) If requested create dynamic menu 
@@ -779,117 +654,8 @@ $(document).ready(function(){
 		
 		$.jastTopFixedVnav('.v-nav');
 		
-		//$('.h-nav li li').last().css('border', '4px solid blue');
-		
 
-
-		
-
-		//$('nav').each(function(){
-		//$('nav.this-page').find('a').attr('class','menuitem');
-		
-
-		
-				
-									
-		
-		
-
-		
-		//
-	/*
-		
-		$(this)
-		.find('li')
-		.each(function(){
-			$(this).addClass('menu-item');
-			})
-		.first()
-		.addClass('active');
-		
-		$(this)
-		.find('li')
-		.on('click',function(e){
-			//e.preventDefault();
-			var ref = $(this).find('a').attr('href');
-			//console.log(ref);
-			$('nav li').removeClass('active');
-			$('nav a[href='+ref+']').closest('li').addClass('active');
-			});
-		
-		if($(this).hasClass('v-nav')){
-			$(this).addClass('clearfix');
-			
-			
-			
 	
-			if($('.v-nav').hasClass('scrollable')){
-				$(this).find('a').attr('data-scroll','true');
-				
-				$.cachedScript( "js/scroll.js" )
-				.done(function( script, textStatus ) {			
-					console.log( 'Scroller: '+textStatus );
-				});
-				$.cachedScript( "js/fixed-responsive-nav.js" )
-				.done(function( script, textStatus ) {
-					console.log( 'Fixedresponsive: '+textStatus );
-				});
-				
-				
-				}
-				
-			}
-		//attr( "menu-item", "Beijing Brush Seller" );
-		
-		
-		});*/
-		
-	/**
-	 * Matrix: Scan for selectors for scripts 
-	 * with dependencies and call them only if needed
-	 * by Alfredo Cosco
-	 * cfr. cachedScript function
-	 * *
-	var matrix = {};
-	var matrix = {
-		dialogs:{ 
-				hook : 'dialog', 
-				src : 'js/dialog-polyfill.js', 
-				actions : [
-					$('.show-dialog').jastDialog('open'),
-					$('.close-dialog').jastDialog('close') 
-					]  
-				},
-		lightbox:{ 
-				hook : 'article.jast-gallery', 
-				src : 'js/lightbox.min.js',
-				actions : [
-					$('.jast-gallery').jastGallery()
-					]
-				}
-		};
-	
-	//console.log(matrix.dialogs);
-	//console.log(matrix);	
-	for(var key in matrix) {
-		
-		var hook = matrix[key].hook;
-		var src = matrix[key].src;
-		var actions = matrix[key].actions
-		var actionsLength = matrix[key].actions.length;
-		
-		if($( hook ).length > 0){	
-			$.cachedScript( src )
-			.done(function( script, textStatus ) {
-				for (var i = 0; i < actionsLength; i++) {
-					actions[i];
-					}
-			console.log( hook +' : '+src+' : '+textStatus );
-			});
-		} 
-		else {console.log("don't need for "+ hook +" : "+ src);}
-		}
-*/
 	//Optional
 	$('pre').jastPrettyPre();
 	
@@ -904,7 +670,7 @@ $(document).ready(function(){
 	$('.show-dialog').jastDialog('open'),
 	$('.close-dialog').jastDialog('close')
 				
-	//$('.same-width').getSameWidth();
+	$('.same-width').getSameWidth();
 	
 	
 
@@ -914,11 +680,11 @@ $(document).ready(function(){
 /************************
  * On Window resize
  * 
- ***********************/
+ **********************
 $(window).resize(function () {
 //jastSlider('.slides');//run on every window resize
 //jastTopFixedVnav();
 //$('.same-width').getSameWidth();
 //console.log(slideWidth);
-});
+});*/
 
